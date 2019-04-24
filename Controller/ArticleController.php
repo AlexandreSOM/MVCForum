@@ -28,7 +28,7 @@ class ArticleController{
         require 'Vue/updateArticle.php';
     }
 
-    public function updateAticleAction($id)
+    public function updateArticleAction($id)
     {
         $articleManager = new ArticleManager();
         $article = new Article ($id, $_POST['titre'], $_POST['contenu']);

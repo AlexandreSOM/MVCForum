@@ -13,9 +13,9 @@
 <h1>Modifier mon super forum !</h1>
 <p>Ici j'affiche le formulaire de modification d'un article</p>
 
-<form action="/project/forumMvc/index.php?controller=article&action=updateArticle" method="post">
-    <input name="titre" type="text" placeholder="Nouveau nom de mon article">
-    <input name="contenu" type="text" placeholder="Nouveau contenu de mon article">
+<form action="/project/forumMvc/index.php?controller=article&action=updateArticle&id=<?php echo $article->getId(); ?>" method="post">
+    <input name="titre" type="text" value="<?php echo $article->getTitre(); ?>">
+    <input name="contenu" type="text" value="<?php echo $article->getContenu(); ?>">
     <input type="submit" value="Valider !">
 </form>
 </body>

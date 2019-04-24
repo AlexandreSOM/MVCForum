@@ -39,18 +39,18 @@ class ArticleManager extends DbManager {
         $res = $this->bdd->query($query);
         $res = $res->fetch();
 
-        $articles[] = new Article($res['id'], $res['titre'], $res['contenu'], $res['dateCreation']);
+        $article = new Article($res['id'], $res['titre'], $res['contenu'], $res['dateCreation']);
 
-        return $articles;
+        return $article;
 
     }
 
     public function updateArticle(Article $article)
     {
-       $query =  "UPDATE Article
-                    SET titre = '".$article->getTitre()."',
-                         contenu = '".$article->getContenu()."',
-                    WHERE 'id' = ".$article->getId();
+       $query =  "UPDATE `Article`
+                    SET `titre` = '".$article->getTitre()."',
+                         `contenu` = '".$article->getContenu()."'
+                    WHERE id = ".$article->getId();
         $res = $this->bdd->prepare($query);
         $res->execute();
     }
